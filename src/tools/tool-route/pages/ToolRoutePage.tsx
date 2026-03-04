@@ -39,6 +39,32 @@ export default function ToolRoutePage() {
 
   const ToolComponent = tool.Component
 
+  if (tool.workspaceMode === 'full') {
+    return (
+      <section className="space-y-6">
+        <nav className="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="面包屑">
+          <Link
+            to="/"
+            className="rounded px-2 py-1 transition hover:bg-slate-800 hover:text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
+          >
+            总览
+          </Link>
+          <span>/</span>
+          <Link
+            to={getCategoryPath(category.id)}
+            className="rounded px-2 py-1 transition hover:bg-slate-800 hover:text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
+          >
+            {category.name}
+          </Link>
+          <span>/</span>
+          <span className="text-slate-200">{tool.name}</span>
+        </nav>
+
+        <ToolComponent />
+      </section>
+    )
+  }
+
   return (
     <section className="space-y-6">
       <nav className="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="面包屑">

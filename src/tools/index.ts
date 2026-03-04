@@ -20,6 +20,7 @@ export type ToolDefinition = {
   description: string
   status: ToolStatus
   launchMode: 'page' | 'inline'
+  workspaceMode?: 'default' | 'full'
   Component: ComponentType
 }
 
@@ -41,6 +42,7 @@ export const tools: ToolDefinition[] = [
     description: '在图片上添加文本、调整字体、位置与样式。',
     status: 'active',
     launchMode: 'page',
+    workspaceMode: 'full',
     Component: ImageTextEditPage,
   },
   {

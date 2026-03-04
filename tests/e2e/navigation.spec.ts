@@ -17,6 +17,8 @@ test('navigates from overview to image text tool', async ({ page }) => {
   await toolPage.waitForLoadState('domcontentloaded')
   await expect(toolPage).toHaveURL(/\/tools\/image-text-edit$/)
   await expect(toolPage.getByRole('heading', { name: '图片文本编辑' })).toBeVisible()
+  await expect(toolPage.getByRole('button', { name: '上传图片' })).toBeVisible()
+  await expect(toolPage.getByRole('button', { name: '识别文字' })).toBeVisible()
 })
 
 test('opens direct tool from sidebar and renders in main area', async ({ page }) => {

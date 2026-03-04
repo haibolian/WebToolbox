@@ -4,6 +4,8 @@ import { RouterProvider } from 'react-router-dom'
 import './index.css'
 import { appRouter } from './app/router'
 
+document.documentElement.classList.add('dark')
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <RouterProvider router={appRouter} />

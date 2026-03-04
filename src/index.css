@@ -3,7 +3,7 @@
 :root {
   color: #e2e8f0;
   background-color: #020617;
-  font-family: "IBM Plex Sans", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+  font-family: "Fira Sans", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -12,12 +12,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  color: #e2e8f0;
   background:
-    radial-gradient(circle at 15% 0%, rgb(14 116 144 / 30%), transparent 35%),
-    radial-gradient(circle at 85% 100%, rgb(59 130 246 / 15%), transparent 40%),
+    radial-gradient(circle at 12% 0%, rgb(14 116 144 / 18%), transparent 34%),
+    radial-gradient(circle at 88% 100%, rgb(14 165 233 / 12%), transparent 40%),
     #020617;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

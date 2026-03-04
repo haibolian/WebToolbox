@@ -1,8 +1,9 @@
 import { createBrowserRouter, type RouteObject } from 'react-router-dom'
 import AppLayout from './layouts/AppLayout'
-import HomePage from '../tools/home/pages/HomePage'
+import CategoryPage from '../tools/category/pages/CategoryPage'
 import NotFoundPage from '../tools/not-found/pages/NotFoundPage'
-import { tools } from '../tools'
+import OverviewPage from '../tools/overview/pages/OverviewPage'
+import ToolRoutePage from '../tools/tool-route/pages/ToolRoutePage'
 
 export const appRoutes: RouteObject[] = [
   {
@@ -11,12 +12,16 @@ export const appRoutes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <HomePage />,
+        element: <OverviewPage />,
       },
-      ...tools.map((tool) => ({
-        path: tool.path,
-        element: <tool.Component />,
-      })),
+      {
+        path: 'categories/:categoryId',
+        element: <CategoryPage />,
+      },
+      {
+        path: 'tools/:toolId',
+        element: <ToolRoutePage />,
+      },
       {
         path: '*',
         element: <NotFoundPage />,
